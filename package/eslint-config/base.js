@@ -5,4 +5,4 @@ module.exports = {
     // "plugin:prettier/recommended",
     'prettier', // 关闭eslint和prettier冲突的选项
   ],
-}
+};

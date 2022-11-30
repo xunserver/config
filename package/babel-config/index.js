@@ -3,9 +3,9 @@ module.exports = (_, options) => {
     typescript = false,
     envOptions = {},
     typescriptOptions = {},
-  } = options
-  const presets = [       
-    [       
+  } = options;
+  const presets = [
+    [
       '@babel/preset-env',
       {
         corejs: 3,
@@ -13,7 +13,7 @@ module.exports = (_, options) => {
         ...envOptions,
       },
     ],
-  ]
+  ];
 
   const plugins = [
     [
@@ -22,7 +22,7 @@ module.exports = (_, options) => {
         corejs: 3,
       },
     ],
-  ]
+  ];
 
   if (typescript) {
     presets.push([
@@ -31,11 +31,11 @@ module.exports = (_, options) => {
         allExtensions: true,
         ...typescriptOptions,
       },
-    ])
+    ]);
   }
 
   return {
     presets,
     plugins,
-  }
-}
+  };
+};

@@ -1,12 +1,15 @@
 ## 功能
-支持在html、vue中lint css、less、scss规则。包含css属性的排序。
+
+支持在 html、vue 中 lint css、less、scss 规则。包含 css 属性的排序。
 
 ## 安装
+
 > npm i -D @xunserver/stylelint-config
 
 或者使用@xunserver/cli 中提供的 `xs add lint` 引导安装
 
 ## 使用
+
 ```js
 // .stylelintrc.js
 module.exports = {

@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['./babel.js']
-}
+  extends: ['./babel.js'],
+};

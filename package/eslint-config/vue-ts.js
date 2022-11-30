@@ -14,4 +14,4 @@ module.exports = {
     },
   ],
   extends: ['./babel.js', './typescript.js'],
-}
+};

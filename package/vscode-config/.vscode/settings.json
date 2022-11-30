@@ -1,15 +1,5 @@
 {
-    "eslint.alwaysShowStatus": true,
-    "stylelint.validate": [
-        "css",
-        "less",
-        "postcss",
-        "vue"
-    ],
-    "stylelint.snippet": [
-        "css",
-        "less",
-        "postcss",
-        "vue"
-    ]
+  "eslint.alwaysShowStatus": true,
+  "stylelint.validate": ["css", "less", "postcss", "vue"],
+  "stylelint.snippet": ["css", "less", "postcss", "vue"]
 }

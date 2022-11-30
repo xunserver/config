@@ -1,3 +1,3 @@
 module.exports = {
-    extends: ['./css.js']
-}
+  extends: ['./css.js'],
+};
