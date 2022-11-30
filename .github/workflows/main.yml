@@ -27,6 +27,8 @@ jobs:
           node-version: "18.x"
           cache: 'pnpm'
           registry-url: "https://registry.npmjs.org"
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
     
       - name: pnpm install
         run: |
@@ -34,6 +36,9 @@ jobs:
 
       - name: changeset version
         run: pnpm changeset version
+
+      - name: pnpm publish
+        run: pnpm -r run pub
 
       - name: pnpm publish
         run: pnpm publish -r --no-git-checks 
