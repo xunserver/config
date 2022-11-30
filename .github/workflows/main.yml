@@ -24,12 +24,15 @@ jobs:
       - name: node and npm
         uses: actions/setup-node@master
         with:
-          node-version: "18.x"
+          node-version: '18.x'
           cache: 'pnpm'
-          registry-url: "https://registry.npmjs.org"
+          registry-url: 'https://registry.npmjs.org'
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
-    
+
+      - name: delete husky
+        run: npm pkg delete scripts.prepare
+
       - name: pnpm install
         run: |
           pnpm install --frozen-lockfile
@@ -41,16 +44,14 @@ jobs:
         run: pnpm -r run pub
 
       - name: pnpm publish
-        run: pnpm publish -r --no-git-checks 
+        run: pnpm publish -r --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
-      
-      - name: git push 
+
+      - name: git push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m 'publish version'
           git push
-
-
