@@ -36,7 +36,9 @@ jobs:
         run: pnpm changeset version
 
       - name: pnpm publish
-        run: pnpm publish -r --no-git-checks --access public
+        run: pnpm publish -r --no-git-checks 
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
       
       - name: git push 
         run: |
@@ -45,7 +47,5 @@ jobs:
           git add -A
           git commit -m 'publish version'
           git push -f
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
 
 
