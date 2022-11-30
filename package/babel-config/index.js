@@ -4,8 +4,8 @@ module.exports = (_, options) => {
     envOptions = {},
     typescriptOptions = {},
   } = options
-  const presets = [
-    [
+  const presets = [       
+    [       
       '@babel/preset-env',
       {
         corejs: 3,
