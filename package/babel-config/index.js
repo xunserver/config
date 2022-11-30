@@ -3,38 +3,39 @@ module.exports = (_, options) => {
     typescript = false,
     envOptions = {},
     typescriptOptions = {},
-  } = options;
+  } = options
   const presets = [
     [
-      "@babel/preset-env",
+      '@babel/preset-env',
       {
         corejs: 3,
         useBuiltIns: 'usage',
         ...envOptions,
       },
     ],
-  ];
+  ]
 
   const plugins = [
     [
-      "@babel/plugin-transform-runtime",
+      '@babel/plugin-transform-runtime',
       {
         corejs: 3,
       },
     ],
-  ];
+  ]
 
   if (typescript) {
     presets.push([
-        '@babel/preset-typescript', {
-            allExtensions: true,
-            ...typescriptOptions
-        }
-    ]);
+      '@babel/preset-typescript',
+      {
+        allExtensions: true,
+        ...typescriptOptions,
+      },
+    ])
   }
 
   return {
     presets,
-    plugins
+    plugins,
   }
-};
+}

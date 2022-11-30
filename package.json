@@ -1,17 +1,35 @@
 {
   "name": "xunserver-config",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "xunserver 仓库合集",
-  "main": "index.js",
   "private": true,
   "scripts": {
-    "pub": "node build/publish.mjs",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install",
+    "clear": "npx rimraf 'package/*/{node_modules}' 'node_modules'"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "eslint",
+    "babel",
+    "prettier",
+    "stylelint"
+  ],
+  "author": "xunserver",
   "license": "ISC",
   "devDependencies": {
-    "@changesets/cli": "^2.25.2"
+    "@changesets/cli": "^2.25.2",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.4",
+    "@xunserver/commitlint-config": "workspace:*",
+    "@xunserver/eslint-config": "workspace:*",
+    "@xunserver/prettier-config": "workspace:*"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --config .eslintrc.js"
+    ],
+    "*.{ts,tsx,js,jsx,json,html,yml,css,less,scss,md}": [
+      "prettier --write"
+    ]
   }
 }
