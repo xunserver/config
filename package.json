@@ -29,7 +29,7 @@
       "eslint --config .eslintrc.js"
     ],
     "*.{ts,tsx,js,jsx,json,html,yml,css,less,scss,md}": [
-      "prettier"
+      "prettier --write"
     ]
   }
 }
