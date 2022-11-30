@@ -1,0 +1,41 @@
+name: publish package
+
+on:
+  push:
+    branches:
+      - main
+      - test
+  workflow_dispatch:
+
+jobs:
+  # cli 发布npm
+  publish-config:
+    runs-on: ubuntu-latest
+    if: contains(github.event.commits[0].message, '[pub]'
+    steps:
+      - name: pull code
+        uses: actions/checkout@master
+
+      - name: node and npm
+        uses: actions/setup-node@master
+        with:
+          node-version: "18.x"
+          cache: 'pnpm'
+          registry-url: "https://registry.npmjs.org"
+     
+      - name: pnpm install
+        uses: pnpm/action-setup@v2
+        with: 
+          version: latest
+          run_install: 
+            recursive: true
+            args:
+              - --frozen-lockfile
+
+      - name: changeset
+        uses: changesets/action@v1
+        with:
+          publish: pnpm publish -r
+        env:
+          NPM_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
