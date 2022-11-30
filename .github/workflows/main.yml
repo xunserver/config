@@ -11,7 +11,7 @@ jobs:
   # cli 发布npm
   publish-config:
     runs-on: ubuntu-latest
-    if: contains(github.event.commits[0].message, '[pub]'
+    if: contains(github.event.commits[0].message, '[pub]')
     steps:
       - name: pull code
         uses: actions/checkout@master
