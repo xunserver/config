@@ -1,0 +1,17 @@
+{
+  "name": "xunserver-config",
+  "version": "0.0.2",
+  "description": "xunserver 仓库合集",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "pub": "node build/publish.mjs",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.8.0"
+  }
+}
