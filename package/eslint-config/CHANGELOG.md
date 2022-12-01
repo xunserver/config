@@ -1,5 +1,11 @@
 # @xunserver/eslint-config
 
+## 0.0.10
+
+### Patch Changes
+
+- f86e3d7: 强制发版
+
 ## 0.0.9
 
 ### Patch Changes
