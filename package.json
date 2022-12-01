@@ -22,7 +22,8 @@
     "@xunserver/eslint-config": "workspace:*",
     "@xunserver/prettier-config": "workspace:*",
     "husky": "^8.0.2",
-    "lint-staged": "^13.0.4"
+    "lint-staged": "^13.0.4",
+    "rimraf": "^3.0.2"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
